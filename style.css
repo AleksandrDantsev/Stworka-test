@@ -1,0 +1,131 @@
+:root {
+    --quantityTasks: 7;
+    --quantityCompletedTasks: 0;
+    --colorCard: #3579F5;
+    --progress: calc((var(--quantityCompletedTasks) / var(--quantityTasks)) * 100% + 2%);
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-card {
+    width: 743px;
+    height: 92px;
+    border-radius: 10px;
+    background-color: var(--colorCard);
+    box-shadow: 0 0 10px 0 #d3d3d3;
+    color: #fff;
+}
+
+.task-card__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 18px 15px 22px;
+}
+
+.task-card__info-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.task-card__status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.task-card__info-task {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 0 16px 0 16px;
+}
+
+.task-card__checklist {
+    display: inline-block;
+    width: 76px;
+    height: 18px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 40px;
+    margin-bottom: 4px;
+    color: #ffffffdc;
+    background-color: #2364DB;
+}
+
+.task-card__completed-quantity-task {
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.122px;
+    margin-bottom: 8px;
+    margin-top: 1px;
+}
+
+.task-card__name-task {
+    font-size: 12px;
+    color: #ffffffdc;
+}
+
+.task-card__open-checklist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+.task-card__button-open-checklist {
+    font-size: 14px;
+    width: 170px;
+    height: 40px;
+    text-align: center;
+    line-height: 38px;
+    color: #4777ED;
+    border-radius: 6px;
+    background-color: #F4F8FF;
+}
+
+.loader {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    transform: translateY(3px);
+}
+
+.loader__progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(#ffffff 0% var(--progress), #ffffff6c var(--progress) 100%);
+    border-radius: 50%;
+}
+
+.loader__progress:after {
+    content: "0/7";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #f0f0f0;
+}
+
+.fill {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 50%;
+    background-color: var(--colorCard);
+}
